@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 @$filename = $_GET['url'];
 header('Content-Type: video/MP2T');
 header('Content-Disposition: attachment; filename="' . md5($filename) . '.ts"');
