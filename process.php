@@ -1,3 +1,4 @@
+<?php
 @$filename = $_GET['url'];
 header('Content-Type: video/MP2T');
 header('Content-Disposition: attachment; filename="' . md5($filename) . '.ts"');
@@ -11,3 +12,4 @@ curl_setopt($ch, CURLOPT_WRITEFUNCTION, function($curl, $data) {
 });
 curl_exec($ch);
 curl_close($ch);
+?>
