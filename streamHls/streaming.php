@@ -1,11 +1,10 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+header('Access-Control-Allow-Methods: *');
 @$requestUrl = $_GET['url'];
 $requestUrl = str_replace('https://www.facebook.com/video/embed', 'http://immortal.hydrax.net', $requestUrl);
 $ret = godEyes($requestUrl);
-echo $ret;
-//header('Location: ' . $ret);
+header('Location: ' . $ret);
 function godEyes($requestUrl){
     $handle = curl_init($requestUrl);
 	curl_setopt_array($handle, array(
